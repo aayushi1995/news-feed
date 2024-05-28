@@ -8,3 +8,6 @@ such as
 
 Filtering can be done on the Date article was published, categories, and sources
 Users can also set their default news preferences.
+
+# Docker Pull command
+docker pull aayushi226/news-feed
