@@ -1,8 +1,10 @@
-# React + Vite
+# News Feed APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is open source news app which fetches different news from different sources 
+such as 
+1. https://open-platform.theguardian.com/
+2. https://developer.nytimes.com/apis
+3. https://newsapi.org/docs
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Filtering can be done on the Date article was published, categories, and sources
+Users can also set their default news preferences.
