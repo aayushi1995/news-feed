@@ -1,0 +1,14 @@
+.newsCardWrapper {
+    display: block;
+    padding: 10px 50px;
+}
+.searchWrapper {
+    margin:10px;
+}
+.searchInput {
+   max-width: 500px;
+   width:100%;
+}
+.searchButton{
+    min-width: 90px;
+}
