@@ -1,11 +1,11 @@
-FROM node:18-alpine
+FROM node:lts-alpine
 
 WORKDIR /app
+COPY package.json .
 
-COPY package.json package-lock.json ./
-
-RUN npm install
-
+RUN yarn install
 COPY . .
 
-CMD ["npm", "start"]
+EXPOSE 5173
+
+CMD ["yarn", "dev"]
