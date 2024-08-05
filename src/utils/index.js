@@ -130,17 +130,3 @@ export const createNewsAPIPayload = (filters, search) => {
   }
   return payloadData;
 };
-
-export const debounceSearch = function (fn, d) {
-  let timer;
-  return function () {
-    let context = this,
-      args = arguments;
-
-    clearTimeout(timer);
-
-    timer = setTimeout(() => {
-      fn(context, args);
-    }, d);
-  };
-};

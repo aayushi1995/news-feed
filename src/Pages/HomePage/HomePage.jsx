@@ -6,6 +6,7 @@ import NewsCard from "../../Components/NewsCard/NewsCard";
 import { Input, Button, Flex } from "@mantine/core";
 import { filterCount } from "../../utils/index";
 import {SkeletonLoader} from '../../Components/SkeletonLoader'
+import { notifications } from '@mantine/notifications';
 import "./HomePage.css";
 
 
@@ -20,6 +21,12 @@ const Homepage = () => {
     dispatch(handleSearchQuery(search));
     const obj = filterCount(filters) > 0 ? filters : preferences;
     dispatch(fetchFilteredNews(obj, search));
+
+    notifications.show({
+      title: `Search got applied successfully`,
+      color: 'green',
+      autoClose: 3000
+    })
   };
 
   const handleKeyDown = (event) => {

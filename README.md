@@ -1,6 +1,6 @@
 
 # News Feed APP
-This is open source news app which fetches different news from different sources such as 
+This is an open source news app which fetches different news from different sources such as 
 1. https://open-platform.theguardian.com/
 2. https://developer.nytimes.com/apis
 3. https://newsapi.org/docs
@@ -32,20 +32,32 @@ What I could have added if I had more time.
 2. Cache API data for 1 minute if the same payload is passed to the same API
 3. Swipe functionality on mobile instead of scroll.
 4. Implement virtualisation for better performances
+5. Better Error notifications when one of the API fails
+6. News Feed is usually Server side rendered hence we can implement using Nextjs
 
 ## Setting up and running it locally via Docker
-
-### Docker Pull command
-docker pull aayushi226/news-feed
+1. git clone https://github.com/aayushi1995/news-feed.git
+2. cd news-feed
+3. yarn install
+4. docker built -t news-feed .
+5. docker images (You should be able to see news-feed image being created)
+6. docker run -p 8080:5173 news-feed
 
 ### Code structure
-1. I have added .css files for each components since my css isnt going to change, so I dont need a css-in-jss libraries like styled components thereby having seprate
+1. We have assets, for logo
+2. Components folder for modular code structure where most components are reusable components. 
+3. Pages folder has Homepage.jsx. 
+4. reducers folder has newsReducer.js which has the entire news-feed store and actions
+5. thunk folder has newsThunk.js which is our middleware for handling the asynchronous calls to the APIs and putting that data to the store.
+6. utils has index.js which has functions that does data manipulation and payload creation.
+7. Error Boundary is implemented in Error Component
+8. I have simple CSS structure where I am importing .css files to each jsx file since there is no dynamic Css needed
 
 ### Libraries used
--
+1. @mantine library for UI components 
+2. @redux for handling centralised state 
+3. @redux-thunk for handling side effects on redux
 
-### Application Design 
-- 
 
 ## Issues I faced during the assignment
 

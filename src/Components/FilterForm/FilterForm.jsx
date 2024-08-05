@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   handleApplyFilters,
   handleResetFilters,
@@ -14,9 +14,11 @@ import { DatePickerInput } from "@mantine/dates";
 import { IconCheck, IconX } from "@tabler/icons-react";
 import "./FilterForm.css";
 import {GUARDIAN, NYTIMES, NEWS_API} from '../../utils/constants'
-import { emptyFilterState, emptyPreferenceState } from "../../reducers/newsReducer";
+import { emptyFilterState } from "../../reducers/newsReducer";
+import { notifications } from '@mantine/notifications';
 
-// Common component for Preferences and filters both
+
+// Common component for Preferences and filters.
 
 const FilterForm = ({ data, handleClose, showPreferencesForm = false }) => {
 
@@ -51,8 +53,13 @@ const FilterForm = ({ data, handleClose, showPreferencesForm = false }) => {
         handlePreferences(obj)
       );
     }
-   
+    
     handleClose();
+    notifications.show({
+      title: `${showPreferencesForm ? "Preferences" : "Filters"} applied successfully`,
+      color: 'green',
+      autoClose: 3000,
+    })
   };
 
   const onResetFilter = () => {
@@ -64,6 +71,12 @@ const FilterForm = ({ data, handleClose, showPreferencesForm = false }) => {
       dispatch(handleResetPreferences());
     }
     handleClose();
+    notifications.show({
+      title: `${showPreferencesForm ? "Preferences" : "Filters"} got removed successfully`,
+      color: 'yellow',
+      autoClose: 3000
+
+    })
   };
 
   return (
