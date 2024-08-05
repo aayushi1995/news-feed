@@ -36,26 +36,26 @@ What I could have added if I had more time.
 6. News Feed is usually Server side rendered hence we can implement using Nextjs
 
 ## Setting up and running it locally via Docker
-1. git clone https://github.com/aayushi1995/news-feed.git
-2. cd news-feed
-3. yarn install
-4. docker built -t news-feed .
-5. docker images (You should be able to see news-feed image being created)
-6. docker run -p 8080:5173 news-feed
+1. ```git clone https://github.com/aayushi1995/news-feed.git```
+2. ```cd news-feed```
+3. ```yarn install```
+4. ```docker built -t news-feed .```
+5. ```docker images (You should be able to see news-feed image being created)```
+6. ```docker run -p 8080:5173 news-feed```
 
 ### Code structure
 1. We have assets, for logo
-2. Components folder for modular code structure where most components are reusable components. 
-3. Pages folder has Homepage.jsx. 
-4. reducers folder has newsReducer.js which has the entire news-feed store and actions
-5. thunk folder has newsThunk.js which is our middleware for handling the asynchronous calls to the APIs and putting that data to the store.
+2. Components folder for modular code structure where FilterForm and NewsCard are reusable components
+3. Pages folder has Homepage.jsx, parent component for our News-app
+4. reducers folder has newsReducer.js which has news-feed reducer and actions
+5. thunk folder has newsThunk.js which is our middleware for handling the asynchronous calls to the APIs and putting that data into the store.
 6. utils has index.js which has functions that does data manipulation and payload creation.
-7. Error Boundary is implemented in Error Component
-8. I have simple CSS structure where I am importing .css files to each jsx file since there is no dynamic Css needed
+7. Error Boundary is implemented in ErrorBoundary Component
+8. I have written a simple CSS structure where I am importing .css files to each jsx file since there is no dynamic CSS needed.
 
 ### Libraries used
 1. @mantine library for UI components 
-2. @redux for handling centralised state 
+2. @redux for handling centralized state 
 3. @redux-thunk for handling side effects on redux
 
 
